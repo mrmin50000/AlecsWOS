@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск категорий</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .category {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .category:hover {
+            background-color: #eaeaea;
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Поиск категорий</h1>
+<div class="categories">
+    <div class="category" data-category="milf">MILF</div>
+    <div class="category" data-category="cumshot">Cumshot</div>
+    <div class="category" data-category="blowjob">Blowjob</div>
+    <div class="category" data-category="creampie">Creampie</div>
+    <div class="category" data-category="big ass">Big Ass</div>
+    <div class="category" data-category="anal">Anal</div>
+    <div class="category" data-category="threesome">Threesome</div>
+    <div class="category" data-category="lesbian">Lesbian</div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="https://preview.redd.it/bombardino-crocodilo-v0-6odt9yqrqgse1.png?width=640&crop=smart&auto=webp&s=a1792588c9639d7471d24759cd4f6668ccaa2a8c" alt="" style="width:100%;">
+    </div>
+</div>
+
+<script>
+    const categories = document.querySelectorAll('.category');
+    const modal = document.getElementById("myModal");
+    const span = document.getElementsByClassName("close")[0];
+
+    categories.forEach(category => {
+        category.addEventListener('click', () => {
+            modal.style.display = "block";
+        });
+    });
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
